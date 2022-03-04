@@ -1,6 +1,7 @@
 import React from 'react'
 import { CartWidget } from './CartWidget'
 import "./navbar.css"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 export const Navbar = () => {
   return (
     <header className='header'>
@@ -12,7 +13,9 @@ export const Navbar = () => {
                <li><a href=''>Accesorios</a></li>
            </ul>
         </nav>
-        <CartWidget />
+        <>
+          <CartWidget />
+        </>
     </header>
   )
 }

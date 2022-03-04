@@ -1,0 +1,25 @@
+
+
+.item{
+    text-decoration: none;
+    list-style: none;
+    max-width: 250px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.item__img{
+    max-width: 250px;
+    border-radius: 10px;
+}
+
+.item__bottom{
+    padding: 0.2em;
+}
+
+.item__price{
+    font-weight: bold;
+}
+
+p{
+    margin-top: 4px;
+}
