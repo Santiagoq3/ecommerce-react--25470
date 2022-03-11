@@ -1,16 +1,15 @@
-import { Fragment } from 'react';
 import './App.css';
+import { ItemDetailContainer } from './components/ItemDetailContainer';
 import { ItemListContainer } from './components/ItemListContainer';
 import { Navbar } from './components/Navbar';
 
 function App() {
   return (
-    <Fragment className="App">
-
+    <div className="App">
       <Navbar />
       <ItemListContainer greeting="Discos 2PAC - DISPONIBLES AHORA" />
-
-    </Fragment>
+      <ItemDetailContainer />
+    </div>
   );
 }
 

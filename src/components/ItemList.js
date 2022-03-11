@@ -6,8 +6,8 @@ export const ItemList = ({productos}) => {
   return (
     <ul className='itemlist'>
       {
-        productos.map(producto =>{
-          return <Item producto={producto} />
+        productos.map((producto,index) =>{
+          return <Item key={index} producto={producto} />
         })
       }
     </ul>

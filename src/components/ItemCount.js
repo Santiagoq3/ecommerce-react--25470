@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "./itemcount.css"
-export const ItemCount = ({initial,stock,onAdd}) => {
+export const ItemCount = ({initial = 1,stock,onAdd}) => {
 
   const [count, setCount] = useState(initial)
 

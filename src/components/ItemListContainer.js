@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { ItemCount } from './ItemCount'
 import { ItemList } from './ItemList';
 import "./itemlistcontainer.css"
-
 const onAdd = ()=>{
 
   console.log("Agregado al carrito");
@@ -26,26 +25,25 @@ const productos = [
     stock: 10
   },
 ]
-
-const productPromise = new Promise((res,rej)=>{
-
+const productPromise = new Promise((resolve,rej)=>{
 
   setTimeout(() => {
-    
-    res(productos)
+    resolve(productos)
   }, 3000);
 })
-
 export const ItemListContainer = ({greeting}) => {
 
   const [productos, setProductos] = useState([])
 
+  
+ 
   useEffect(()=>{
 
     productPromise
     .then((data)=> setProductos(data))
     .catch((err)=> console.log(err))
-  })
+
+  },[])
 
   return (
     <section className='itemlistcontainer'>

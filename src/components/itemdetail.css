@@ -1,0 +1,34 @@
+.itemdetail{
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.itemdetail img{
+    flex: 0.4;
+    width: 100%;
+    height: 100%;
+}
+.itemdetail-producto{
+    flex: 0.6;
+    width: 100%;
+    height: 100%;
+    padding: 2em;
+}
+
+.itemdetail-producto-nombre{
+    font-size: 3.5rem;
+    color: RGB(25, 30, 45);
+}
+
+.itemdetail-producto-precio{
+    font-size: 1.9rem;
+}
+
+.itemdetail-producto-descripcion{
+    font-size: 2rem;
+    color: RGB(104, 108, 118);
+    padding-bottom: 1em;
+    
+}
