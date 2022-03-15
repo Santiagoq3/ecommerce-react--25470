@@ -38,22 +38,21 @@ export const ItemListContainer = ({greeting}) => {
 
   const [productos, setProductos] = useState([])
   const {id} = useParams()
+
   
- 
+  
   useEffect(()=>{
 
     if(id){
       productPromise
       .then((data)=>{
-        setProductos(data.filter(p => p.categoria === id))
+        setProductos(data.filter(p => p.categoria == id))
       })
     }else{
-
       productPromise
       .then((data)=> setProductos(data))
       .catch((err)=> console.log(err))
     }
-
   },[id])
   return (
     <section className='itemlistcontainer'>

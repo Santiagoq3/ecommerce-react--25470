@@ -8,6 +8,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom"
+import { Cart } from './components/Cart';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/' element={<ItemListContainer greeting="Discos 2PAC - DISPONIBLES AHORA"/>} />
           <Route path='/category/:id' element={<ItemListContainer greeting="Discos 2PAC - DISPONIBLES AHORA"/>} />
           <Route path='/item/:id' element={<ItemDetailContainer />} />
+          <Route path='/cart' element={<Cart />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -36,6 +36,9 @@ export const ItemDetailContainer = () => {
 
   const [producto, setProducto] = useState([])
   const {id} = useParams()
+
+
+  console.log(id)
   const getItem = ()=>{
 
     return productPromise

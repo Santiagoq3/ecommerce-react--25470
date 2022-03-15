@@ -23,9 +23,7 @@ export const ItemDetail = ({producto}) => {
           </>
 
           :
-
           <span>Cargando...</span>
-
         }
     </div>
   )
