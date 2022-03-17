@@ -53,7 +53,7 @@ export const ItemDetailContainer = () => {
   console.log(producto)
   return (
     <div className='itemdetailcontainer'>
-
+      
       <ItemDetail producto={producto} />
     </div>
   )
