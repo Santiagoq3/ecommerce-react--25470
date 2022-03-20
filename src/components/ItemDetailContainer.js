@@ -25,20 +25,19 @@ const productos = [
   },
 ]
  
-
 const productPromise = new Promise((resolve,rej)=>{
 
   setTimeout(() => {
     resolve(productos)
   }, 3000);
 })
+
 export const ItemDetailContainer = () => {
 
   const [producto, setProducto] = useState([])
   const {id} = useParams()
 
 
-  console.log(id)
   const getItem = ()=>{
 
     return productPromise
@@ -50,10 +49,9 @@ export const ItemDetailContainer = () => {
     .then((data)=> setProducto(data.filter(p => p.id == id)))
     .catch((err)=> console.log(err))
   },[id])
-  console.log(producto)
+
   return (
     <div className='itemdetailcontainer'>
-      
       <ItemDetail producto={producto} />
     </div>
   )

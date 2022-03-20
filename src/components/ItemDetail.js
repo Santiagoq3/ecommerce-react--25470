@@ -8,7 +8,7 @@ export const ItemDetail = ({producto}) => {
 
   const handleAdd = (cantidadElegida = 1)=>{
 
-    console.log("la cantidad añadida es: " + cantidadElegida)
+    alert(`la cantidad añadida al carrito es ${cantidadElegida}`)
   }
 
   return (

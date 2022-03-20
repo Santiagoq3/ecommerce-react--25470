@@ -6,9 +6,7 @@ export const ItemCount = ({initial = 1,stock,onAdd}) => {
 
 
   const agregar = ()=>{
-
     if(count < stock){
-
       setCount(count + 1);
     }
   }
@@ -20,8 +18,7 @@ export const ItemCount = ({initial = 1,stock,onAdd}) => {
   }
 
   return (
-    <div className='itemcount'>
-        
+    <div className='itemcount'> 
       <div className='itemcount__display-count'>
         <i onClick={restar} className="fas fa-minus itemcount__btn"></i>
         <span>

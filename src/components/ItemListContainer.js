@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import { ItemCount } from './ItemCount'
 import { ItemList } from './ItemList';
 import "./itemlistcontainer.css"
-const onAdd = ()=>{
-
-  console.log("Agregado al carrito");
-}
 
 const productos = [
   {
@@ -40,7 +35,6 @@ export const ItemListContainer = ({greeting}) => {
   const {id} = useParams()
 
   
-  
   useEffect(()=>{
 
     if(id){
@@ -54,6 +48,8 @@ export const ItemListContainer = ({greeting}) => {
       .catch((err)=> console.log(err))
     }
   },[id])
+
+
   return (
     <section className='itemlistcontainer'>
         <h2>
