@@ -10,20 +10,21 @@ import {
   Route,
 } from "react-router-dom"
 import { Cart } from './components/Cart';
+import { CartContext } from './context/CartContext';
 
 function App() {
   return (
     <div className="App">
-      
       <BrowserRouter>
+        <CartContext>
           <Navbar />
-        <Routes>
-          <Route path='/' element={<ItemListContainer greeting="Discos 2PAC - DISPONIBLES AHORA"/>} />
-          <Route path='/category/:id' element={<ItemListContainer greeting="Discos 2PAC - DISPONIBLES AHORA"/>} />
-          <Route path='/item/:id' element={<ItemDetailContainer />} />
-          <Route path='/cart' element={<Cart />} />
-        </Routes>
-        
+          <Routes>
+            <Route path='/' element={<ItemListContainer greeting="Discos 2PAC - DISPONIBLES AHORA"/>} />
+            <Route path='/category/:id' element={<ItemListContainer greeting="Discos 2PAC - DISPONIBLES AHORA"/>} />
+            <Route path='/item/:id' element={<ItemDetailContainer />} />
+            <Route path='/cart' element={<Cart />} />
+          </Routes>
+        </CartContext>
       </BrowserRouter>
     </div>
   );

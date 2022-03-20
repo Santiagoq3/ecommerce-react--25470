@@ -4,9 +4,7 @@ import "./item.css"
 import { ItemCount } from './ItemCount';
 
 export const Item = ({producto}) => {
-
   
-  console.log(producto);
   return (
     <li className='item'>
       <Link to={`/item/${producto.id}`} >

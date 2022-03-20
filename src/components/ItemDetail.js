@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { cartContext } from '../context/CartContext'
 import { ItemCount } from './ItemCount'
 import "./itemdetail.css"
 
-
 export const ItemDetail = ({producto}) => {
   const [item] = producto
-
+  const {addItem} = useContext(cartContext)
   const handleAdd = (cantidadElegida = 1)=>{
 
+    addItem(item,cantidadElegida)
     alert(`la cantidad añadida al carrito es ${cantidadElegida}`)
   }
 
