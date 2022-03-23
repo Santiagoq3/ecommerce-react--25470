@@ -36,15 +36,12 @@ export const ItemDetailContainer = () => {
 
   const [producto, setProducto] = useState([])
   const {id} = useParams()
-
-
   const getItem = ()=>{
 
     return productPromise
   }
 
   useEffect(()=>{
-
     getItem()
     .then((data)=> setProducto(data.filter(p => p.id == id)))
     .catch((err)=> console.log(err))

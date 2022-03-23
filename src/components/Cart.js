@@ -5,8 +5,8 @@ import "./cart.css"
 
 export const Cart = () => {
 
-    const {cart} = useContext(cartContext)
-    console.log(Cart)
+    const {cart,total,removeItem} = useContext(cartContext)
+    console.log(cart)
     return (
         <div className='cart'>
             <h1>Shopping Cart</h1>
@@ -16,20 +16,20 @@ export const Cart = () => {
                    { cart.map(item => {
                       return <li className='cart_container'>
                           <div className='cart_container-top'>
-                            <p className='cart_item-nombre'>camiseta</p>
-                            <p>$ 0</p>
+                            <p className='cart_item-nombre'>{item.item.nombre}</p>
+                            <p>$ {item.item.precio}</p>
                           </div>
-                            <p>descripcion: 2PAC</p>
+                            <p>{item.item.descripcion}</p>
                             <div className='cart_container-bottom'>
-                                <p>Cantidad: 0</p>
-                                <button>Remove</button>
+                                <p>Cantidad: {item.quantity}</p>
+                                <button onClick={()=> removeItem(item.item.id)} className='cart_btn-remove'>Eliminar</button>
                             </div>
                         </li>
                     })}
                     <div className='cart_comprar'>
                         <div className='cart_comprar_total'>
                             <p>Total</p>
-                            <p>$0</p>
+                            <p>$ {total}</p>
                         </div>
                         <p className='cart_btn-comprar'>Generar orden</p>
                         <Link to="/" className='cart_continuar-comprando' >

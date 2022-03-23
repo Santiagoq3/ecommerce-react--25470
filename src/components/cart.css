@@ -17,6 +17,9 @@
 .cart ul{
     width: 50%;
     margin-top: 2em;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .cart_container{
@@ -78,4 +81,18 @@
     margin-top: 1em;
     text-align: center;
 
+}
+
+.cart ul{
+
+}
+
+.cart_btn-remove{
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgb(126, 8, 126);
+    cursor: pointer;
 }
