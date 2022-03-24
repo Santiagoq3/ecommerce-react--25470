@@ -15,11 +15,15 @@ export const CartContext = ({children}) => {
     },[cart])
 
     const addItem = (item,quantity)=>{
+
       let cartProduct = {item,quantity};
+
       if(isInCart(item)){
+        
         cartProduct = cart.find(p => p.item.id === item.id)
         cartProduct.quantity = cartProduct.quantity + quantity;
         cartProductAux = [...cart]
+
       }else{
          cartProductAux = [...cart,cartProduct]
       }
@@ -35,13 +39,12 @@ export const CartContext = ({children}) => {
     const clear= ()=>{
       setCart([])
     }
-
     const checkTotal = ()=>{
-
-      let totalAux = 0;
-
+      
+      let totalAux=0
+   
        cart.map(p => {
-        totalAux = p.item.precio * p.quantity
+        totalAux = totalAux +  (p.item.precio * p.quantity);
       })
       setTotal(totalAux)
 
