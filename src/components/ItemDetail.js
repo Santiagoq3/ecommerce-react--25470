@@ -4,11 +4,13 @@ import { ItemCount } from './ItemCount'
 import "./itemdetail.css"
 
 export const ItemDetail = ({producto}) => {
-  const [item] = producto
+
   const {addItem} = useContext(cartContext)
+
+  
   const handleAdd = (cantidadElegida = 1)=>{
 
-    addItem(item,cantidadElegida)
+    addItem(producto,cantidadElegida)
     alert(`la cantidad añadida al carrito es ${cantidadElegida}`)
   }
 
@@ -17,16 +19,16 @@ export const ItemDetail = ({producto}) => {
         
         {
 
-          item ? 
+producto ? 
           <>
           
-            <img src={item.img}  />
+            <img src={producto.img}  />
             <div className='itemdetail-producto'>
                 
-                <h2 className='itemdetail-producto-nombre'>{item.nombre}</h2>
-                <p className='itemdetail-producto-precio'>{item.precio}$</p>
-                <p className='itemdetail-producto-descripcion'>{item.descripcion}</p>
-                <ItemCount initial={1} stock={item.stock} onAdd={handleAdd}/>
+                <h2 className='itemdetail-producto-nombre'>{producto.nombre}</h2>
+                <p className='itemdetail-producto-precio'>{producto.precio}$</p>
+                <p className='itemdetail-producto-descripcion'>{producto.descripcion}</p>
+                <ItemCount initial={1} stock={producto.stock} onAdd={handleAdd}/>
             </div>
             
           

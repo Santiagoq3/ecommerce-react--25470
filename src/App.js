@@ -21,10 +21,10 @@ function App() {
           <Navbar />
           <Routes>
             <Route path='/' element={<ItemListContainer greeting="Discos 2PAC - DISPONIBLES AHORA"/>} />
-            <Route path='/category/:id' element={<ItemListContainer greeting="Discos 2PAC - DISPONIBLES AHORA"/>} />
+            <Route path='/category/:idCategory' element={<ItemListContainer greeting="Discos 2PAC - DISPONIBLES AHORA"/>} />
             <Route path='/item/:id' element={<ItemDetailContainer />} />
             <Route path='/cart' element={<Cart />} />
-            <Route path='*' element={<ItemDetailContainer />} />
+            <Route path='*' element={<ItemListContainer />} />
           </Routes>
         </CartContext>
         <Footer />

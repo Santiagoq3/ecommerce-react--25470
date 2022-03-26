@@ -6,13 +6,13 @@ export const CartContext = ({children}) => {
 
     const {Provider} = cartContext
     const [cart, setCart] = useState([])
-    const [total, setTotal] = useState(0)
     let cartProductAux = []
 
 
     useEffect(()=>{
       checkTotal()
     },[cart])
+
 
     const addItem = (item,quantity)=>{
 
@@ -30,6 +30,8 @@ export const CartContext = ({children}) => {
         setCart(cartProductAux)
     }
 
+
+
     const removeItem = (id)=>{
       cartProductAux = cart.filter(p => p.item.id !== id )
       console.log(cartProductAux)
@@ -39,21 +41,23 @@ export const CartContext = ({children}) => {
     const clear= ()=>{
       setCart([])
     }
+
+    const [total, setTotal] = useState(0)
     const checkTotal = ()=>{
       
       let totalAux=0
-   
        cart.map(p => {
         totalAux = totalAux +  (p.item.precio * p.quantity);
       })
       setTotal(totalAux)
-
     }
+
     const isInCart = (item)=>{
       const result = cart.some(p => p.item.id == item.id)
 
       return result
     }
+
   return (
     <Provider value={{cart,addItem,clear,removeItem,total}}>
         {children}
