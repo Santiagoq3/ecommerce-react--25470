@@ -44,13 +44,16 @@ export const Cart = () => {
         })
         .catch((err)=> console.log(err))
 
+
     }
+    
     return (
         <div className='cart'>
             <h1>Shopping Cart</h1>
             {
                 cart.length > 0 ?
                 <div className='cart_container-form'>
+
                     <form onSubmitCapture={createOrder}>
                         <p>Formulario de contacto</p>
                         <label>Nombre:</label>
@@ -61,9 +64,11 @@ export const Cart = () => {
                             Generar Orden
                         </button>
                     </form>
+
+
                     <ul>
-                    { cart.map(item => {
-                        return <li className='cart_container'>
+                    { cart.map((item,index) => {
+                        return <li key={index} className='cart_container'>
                             <div className='cart_container-top'>
                                 <p className='cart_item-nombre'>{item.item.nombre}</p>
                                 <p>$ {item.item.precio}</p>

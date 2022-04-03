@@ -2,7 +2,6 @@ import './App.css';
 import { ItemDetailContainer } from './components/ItemDetailContainer';
 import { ItemListContainer } from './components/ItemListContainer';
 import { Navbar } from './components/Navbar';
-import { ToastContainer } from 'react-toastify';
 
 import {
   BrowserRouter,
@@ -12,7 +11,6 @@ import {
 import { Cart } from './components/Cart';
 import { CartContext } from './context/CartContext';
 import { Footer } from './components/Footer';
-import { Orden } from './components/Orden';
 
 function App() {
   return (
@@ -26,10 +24,8 @@ function App() {
             <Route path='/item/:id' element={<ItemDetailContainer />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='*' element={<ItemListContainer />} />
-            <Route path='/orden' element={<Orden />} />
           </Routes>
         </CartContext>
-        <Footer />
       </BrowserRouter>
     </div>
   );
