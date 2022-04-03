@@ -70,11 +70,14 @@
 .cart_btn-comprar{
     width: 100%;
     margin-top: 1em;
-    padding: 0.5em;
+    padding: 1em;
     text-align: center;
+    border: none;
+    outline: none;
     background-color: blueviolet;
     color: #fff;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .cart_continuar-comprando p{
@@ -83,8 +86,41 @@
 
 }
 
-.cart ul{
+.cart_container-form ul{
+    flex: 0.6;
+}
+.cart_container-form{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 
+}
+.cart_container-form form{
+    flex: 0.4;
+    padding: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 2em;
+}
+
+form input{
+    padding: 1em;
+    max-width: 350px;
+    background: none;
+    outline: none;
+    border: 2px solid #ccc;
+}
+
+form p{
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+
+.cart_container-form ul{
+    flex: 0.5;
 }
 
 .cart_btn-remove{

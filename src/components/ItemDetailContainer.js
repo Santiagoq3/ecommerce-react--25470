@@ -11,11 +11,11 @@ export const ItemDetailContainer = () => {
 
 
   useEffect(()=>{
-    // const q = query(collection(dbFirebase,"productos"),where("id","==",id))
+    const q = query(collection(dbFirebase,"productos"),where("id","==",id))
 
-    // getDocs(q)
-    // .then((resp)=> setProducto(resp.docs.map(p => ({producto:p.data()}))))
-    // .catch((err)=> console.log(err))
+    getDocs(q)
+    .then((resp)=> setProducto(resp.docs.map(p => ({producto:p.data()}))))
+    .catch((err)=> console.log(err))
 
     const docRef = doc(dbFirebase, 'productos', id);
      getDoc(docRef)

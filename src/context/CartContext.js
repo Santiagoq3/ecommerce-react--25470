@@ -6,6 +6,8 @@ export const CartContext = ({children}) => {
 
     const {Provider} = cartContext
     const [cart, setCart] = useState([])
+    const [total, setTotal] = useState(0)
+
     let cartProductAux = []
 
 
@@ -42,15 +44,16 @@ export const CartContext = ({children}) => {
       setCart([])
     }
 
-    const [total, setTotal] = useState(0)
+
     const checkTotal = ()=>{
       
       let totalAux=0
-       cart.map(p => {
+      cart.map(p => {
         totalAux = totalAux +  (p.item.precio * p.quantity);
       })
       setTotal(totalAux)
     }
+    
 
     const isInCart = (item)=>{
       const result = cart.some(p => p.item.id == item.id)
